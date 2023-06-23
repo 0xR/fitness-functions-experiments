@@ -12,10 +12,10 @@ info: |
 drawings:
   persist: false
 transition: slide-left
-title: Exploring Dependency-Cruiser - A Powerful Dependency Visualization Tool
+title: Architecture Fitness Functions on the Frontend
 ---
 
-# Title
+# Architecture Fitness Functions on the Frontend
 
 ---
 
@@ -46,6 +46,8 @@ Dependency-Cruiser
 - Powerful rules syntax for custom checks
 - API for programmatic usage
 - Supports: react, vue, svelte, typescript, vite, webpack, import aliases
+- Good documentations
+- Active development
 
 ---
 
@@ -53,7 +55,7 @@ Dependency-Cruiser
 
 - Components in a `page/` folder should not depend on another `page/` components
 - Ensure your core domain folder does not depend on other folders
-- Ensure test dependencies are not leaking into your production code
+- Ensure test code is not leaking into your production code
 - Shared components should be used 2 or more times
 - Detect unused files that are not imported anywhere
 
@@ -62,3 +64,27 @@ Dependency-Cruiser
 # Example visualization
 
 [link](https://github.com/sverweij/dependency-cruiser/blob/main/doc/real-world-samples.md)
+
+---
+
+# What about eslint-plugin-import?
+
+- There is a lot of overlap
+  - detecting circular dependencies
+  - restricting certain imports
+  - avoid test code in production code
+- However, Dependency-Cruiser offers additional features:
+  - Detecting orphaned files (not imported by anything)
+  - Dynamically isolating sibling folders from each other
+  - Detect how often a component is used
+
+---
+
+# Conclusion
+
+- Without architecture fitness functions, your architecture will degrade over time
+- Dependency-Cruiser is a great tool to automate enforcing a well-designed architecture
+- It's easy to get started
+
+## Downsides
+- No integration with your editor
