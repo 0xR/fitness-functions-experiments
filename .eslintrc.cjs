@@ -100,7 +100,7 @@ module.exports = {
             devDependencies: [
               '**/msw/**',
               '**/react-query/utils.tsx',
-              '**/react-router/utils.ts',
+              '**/react-router/test-utils.tsx',
             ],
           },
         ],

@@ -1,1 +1,1 @@
-export { ErrorsList } from './ErrorsList.tsx';
+export { ErrorsList } from './ErrorsList';

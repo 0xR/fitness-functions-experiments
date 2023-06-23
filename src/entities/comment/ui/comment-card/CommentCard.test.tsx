@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithRouter } from '~shared/lib/react-router';
+import { renderWithRouter } from '~shared/lib/test-utils';
 import { CommentCard } from './CommentCard';
 
 describe('<CommentCard />', () => {

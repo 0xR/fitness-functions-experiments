@@ -1,3 +1,6 @@
+const testFileRegex = '/test/|/msw/|/test.*|\\.(spec|test)\\.(js|mjs|cjs|ts|tsx|ls|coffee|litcoffee|coffee\\.md)$';
+
+
 /** @type {import('dependency-cruiser').IConfiguration} */
 module.exports = {
   forbidden: [
@@ -86,6 +89,15 @@ module.exports = {
         ],
       },
       to: {},
+    },
+    {
+      name: "no-internal-orphans",
+      from: {
+      },
+      module: {
+        numberOfDependentsLessThan: 1,
+        pathNot: testFileRegex,
+      },
     },
     {
       name: 'no-deprecated-core',
@@ -180,9 +192,11 @@ module.exports = {
         "If there's something in a spec that's of use to other modules, it doesn't have that single " +
         'responsibility anymore. Factor it out into (e.g.) a separate utility/ helper or a mock.',
       severity: 'error',
-      from: {},
+      from: {
+        pathNot: testFileRegex,
+      },
       to: {
-        path: '\\.(spec|test)\\.(js|mjs|cjs|ts|ls|coffee|litcoffee|coffee\\.md)$',
+        path: testFileRegex,
       },
     },
     {
@@ -197,7 +211,7 @@ module.exports = {
       from: {
         path: '^(src)',
         pathNot:
-          'test|msw|\\.(spec|test)\\.(js|mjs|cjs|ts|tsx|ls|coffee|litcoffee|coffee\\.md)$',
+          testFileRegex,
       },
       to: {
         dependencyTypes: ['npm-dev'],
