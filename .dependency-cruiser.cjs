@@ -3,6 +3,15 @@ module.exports = {
   forbidden: [
     /* rules from the 'recommended' preset: */
     {
+      name: "no-unshared-in-shared",
+      from: {
+      },
+      module: {
+        path: "/shared/[^/]+/[^/]+/index.tsx?$",
+        numberOfDependentsLessThan: 2
+      }
+    },
+    {
       name: 'features-not-to-features',
       comment:
         'One feature should not depend on another feature (in a separate folder)',

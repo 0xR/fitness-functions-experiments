@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { ErrorsList } from './ErrorsList';
+import { ErrorsList } from './ErrorsList.tsx';
 
 describe('<ErrorsList />', () => {
   it('renders the error messages correctly', () => {

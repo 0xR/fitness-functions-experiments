@@ -1,7 +1,7 @@
 /* eslint-disable no-case-declarations */
 import { GenericErrorModel, GenericErrorModelDto } from '~shared/api/realworld';
-import { ErrorMessage } from '../error-message';
-import { ErrorsList } from '../errors-list';
+import { ErrorMessage } from './error-message';
+import { ErrorsList } from './errors-list';
 
 type ErrorHandlerProps = {
   errorData: GenericErrorModel;
