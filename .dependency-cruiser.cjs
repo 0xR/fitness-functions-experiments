@@ -3,6 +3,30 @@ module.exports = {
   forbidden: [
     /* rules from the 'recommended' preset: */
     {
+      name: 'features-not-to-features',
+      comment:
+        'One feature should not depend on another feature (in a separate folder)',
+      severity: 'error',
+      from: { path: '(/features/)([^/]+)/' },
+      to: { path: '$1', pathNot: '$1$2' },
+    },
+    {
+      name: 'pages-not-to-pages',
+      comment:
+        'One pages should not depend on another pages (in a separate folder)',
+      severity: 'error',
+      from: { path: '(/pages/)([^/]+)/' },
+      to: { path: '$1', pathNot: '$1$2' },
+    },
+    {
+      name: 'widgets-not-to-widgets',
+      comment:
+        'One widgets should not depend on another widgets (in a separate folder)',
+      severity: 'error',
+      from: { path: '(/widgets/)([^/]+)/' },
+      to: { path: '$1', pathNot: '$1$2' },
+    },
+    {
       name: 'not-to-app',
       comment: "don't allow dependencies import from app",
       severity: 'error',
