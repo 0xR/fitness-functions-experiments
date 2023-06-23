@@ -16,7 +16,8 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "coverage:open": "npx vite preview --outDir ./src/shared/lib/test/coverage",
-    "test:coverage:open": "yarn run test:coverage && yarn run coverage:open"
+    "test:coverage:open": "yarn run test:coverage && yarn run coverage:open",
+    "depcruise": "depcruise src"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.11",

@@ -11,6 +11,9 @@ import {
 } from '~widgets/article-meta';
 import { CommentsList } from '~widgets/comments-list';
 import { NewCommentEditor } from '~widgets/new-comment-editor';
+import { Soep } from '~app';
+
+console.log('Soep', Soep);
 
 export function ArticlePage() {
   const { slug } = useParams();
