@@ -17,6 +17,13 @@ module.exports = {
       to: { pathNot: '/entities/|node_modules/|/shared/' },
     },
     {
+      name: 'standalone-shared',
+      comment: 'Shared module should not import from outside of shared',
+      severity: 'error',
+      from: { path: '/shared/' },
+      to: { pathNot: '/shared/|node_modules/' },
+    },
+    {
       name: 'no-circular',
       severity: 'warn',
       comment:
