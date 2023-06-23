@@ -10,6 +10,13 @@ module.exports = {
       to: { path: '^src/app/' },
     },
     {
+      name: 'standalone-entities',
+      comment: "don't entities to import from outside of entities",
+      severity: 'error',
+      from: { path: '/entities/' },
+      to: { pathNot: '/entities/|node_modules/|/shared/' },
+    },
+    {
       name: 'no-circular',
       severity: 'warn',
       comment:
