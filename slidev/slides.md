@@ -21,8 +21,11 @@ title: Exploring Dependency-Cruiser - A Powerful Dependency Visualization Tool
 
 # Why
 
-- Identify architectural issues
-- Prevent future architectural issues
+- Get architectural feedback before code review
+- Gain insights, does the code even match your mental model?
+- Prevent future architectural issues, also for new joiners
+- Quantify your design in code, not just institutional knowledge or (outdated) diagrams
+- Automate checks that are hard to do manually
 
 ---
 
@@ -32,6 +35,30 @@ Dependency-Cruiser
 
 <img src="https://repository-images.githubusercontent.com/74299372/239ed080-370b-11ea-8fe7-140cf7b90a33" />
 
+---
+
 # What
 
-Dependency-Cruiser is a valuable tool for gaining insights into your codebase, identifying architectural issues, improving code quality, ensuring good dependency practices, enhancing collaboration, and boosting development efficiency.
+- Visualize your architecture
+    - Modules level
+    - Folder level
+- Customizable visualization
+- Powerful rules syntax for custom checks
+- API for programmatic usage
+- Supports: react, vue, svelte, typescript, vite, webpack, import aliases
+
+---
+
+# Example rules
+
+- Components in a `page/` folder should not depend on another `page/` components
+- Ensure your core domain folder does not depend on other folders
+- Ensure test dependencies are not leaking into your production code
+- Shared components should be used 2 or more times
+- Detect unused files that are not imported anywhere
+
+---
+
+# Example visualization
+
+[link](https://github.com/sverweij/dependency-cruiser/blob/main/doc/real-world-samples.md)
